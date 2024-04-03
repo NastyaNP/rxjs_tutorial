@@ -1,0 +1,31 @@
+<ng-container *ngIf="{
+        showLoader: showLoader$ | async,
+        showNotification: showNotification$ | async,
+        dataFromServer: dataFromServer$ | async,
+} as variables">
+    <div class="page">
+        <label>
+            <input
+                #input
+                nz-input
+                placeholder="Input"
+            />
+            @if (variables.showNotification) {
+                <p class="description">{{ notificationTitle }}</p>
+            }
+        </label>
+
+
+
+
+        @if (variables.showLoader) {
+            <nz-spin [nzSize]="'large'"></nz-spin>
+        } @else if (!variables.showNotification) {
+            <code>
+                <pre>
+                    {{ variables.dataFromServer | json }}
+                </pre>
+            </code>
+        }
+    </div>
+</ng-container>
