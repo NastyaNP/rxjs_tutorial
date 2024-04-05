@@ -16,7 +16,6 @@ import { ajax, AjaxResponse } from "rxjs/ajax";
 import { processSearchValue } from "./process-search-value.operator";
 import { NzSpinComponent } from "ng-zorro-antd/spin";
 import { NzInputDirective } from "ng-zorro-antd/input";
-import { HttpErrorResponse } from "@angular/common/http";
 
 @Component({
     selector: "app-custom-operators-03",

@@ -1,0 +1,19 @@
+<div>
+    <nz-space nz-flex nzDirection="horizontal" nzSize="large" nzGap="middle">
+        <button nz-button nzType="primary" (click)="onAddSub()">Add new sub</button>
+        <button nz-button nzType="primary" (click)="onRemoveSub()">Remove last sub</button>
+        <button nz-button nzType="primary" (click)="clear()">Clear</button>
+        <button nz-button nzType="primary" (click)="toggleSubscriptions()">Show/Hide subscriptions</button>
+    </nz-space>
+</div>
+
+<div style="margin-top: 16px;" *ngIf="isSubscriptionsVisible">
+    <nz-space nz-flex nzDirection="vertical" nzGap="middle">
+        <div *ngFor="let sub of subs; let index = index">
+            sub index: {{ index }}, value: {{ sharedInterval$ | async }}
+        </div>
+    </nz-space>
+    {{ httpRequest$ | async }}
+    {{ httpRequest$ | async }}
+    {{ httpRequest$ | async }}
+</div>
